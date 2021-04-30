@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Firebase Basics</title>
+      
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+      
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#available-libraries -->
+      
+        <script>
+          var firebaseConfig = {
+            // TODO: Add your our config here
+            apiKey: "AIzaSyDbvPgqiOtAO7hVYnIC_RilTqs2xHHGN6c",
+            authDomain: "mini-proyecto-01-5b04e.firebaseapp.com",
+            projectId: "mini-proyecto-01-5b04e",
+            storageBucket: "mini-proyecto-01-5b04e.appspot.com",
+            messagingSenderId: "626812234443",
+            appId: "1:626812234443:web:0f9313cca93633325cc94e",
+            measurementId: "G-NQ5JF2KH94"
+          };
+          firebase.initializeApp(firebaseConfig);
+        </script>
+      
+        <script src="app.js" defer></script>
+      
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"
+          integrity="sha512-/seDHxVfh1NvFUscAj8GsHQVZJvr2jjAoYsNL7As2FCaFHUHYIarl3sRCvVlFgyouVNiRgHIebyLKjpgd1SLDw=="
+          crossorigin="anonymous"></script>
+      
+      </head>
+
+<body>
+
+
+    <section id="whenSignedOut">
+
+        <div class="jumbotron">
+            <h1 class="display-4">Reading List</h1>
+            <p class="lead">Mini-Proyecto 01: Aplicación de Base de Datos No-Relacional.</p>
+            <hr class="my-4">
+            <p>Inicia sesión con Google para registrar tu usuario en la base de datos.</p>
+            <p class="lead">
+                <button id="signInBtn" class="btn btn-primary">Iniciar sesión</button>
+            </p>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Equipo 7</h1>
+                <p class="font-weight-light">Alek Fernando Howland Aguilar - A01747765</p>
+                <p class="font-weight-light">Francisco Ariel Arenas Enciso - A01369122</p>
+                <p class="font-weight-light">René García Avilés - A01654359</p>
+                <p class="font-weight-light">Víctor Fernando Curiel Ortega - 01747245</p>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="whenSignedIn" hidden="true">
+
+
+        <div class="jumbotron">
+
+            <div id="userDetails"></div>
+            <p class="lead">
+                <button id="signOutBtn" class="btn btn-primary">Cerrar sesión</button>
+            </p>
+            <input class="form-control" id="tiutloTextBox" type="text" placeholder="Título del libro">
+            <input class="form-control" id="autorTextBox" type="text" placeholder="Autor del libro">
+            <button id="agregarLibro" class="btn btn-primary">Agregar Libro</button>
+            <h3 class="font-weight-bold">Mis libros<h3></h3>
+                <ul id="booksList"></ul>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
